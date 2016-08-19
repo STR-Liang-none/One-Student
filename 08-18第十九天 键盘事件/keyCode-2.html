@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input id="ipt" type="text">
+<script>
+  // onkeydown, onkeyup, onkeypress
+
+  var oIpt = document.getElementById('ipt');
+
+  oIpt.onkeydown = function () {
+    console.log(this.value.length)
+  }
+
+  oIpt.onkeyup = function () {
+    console.info(this.value.length)
+  }
+
+  // document.onkeydown = function () {
+  //   console.log('key downd');
+  // }
+  //
+  // document.onkeypress = function () {
+  //   console.log('key press');
+  //   // 功能键无法识别
+  //   //
+  // }
+  //
+  // document.onkeyup = function () {
+  //   console.log('key up');
+  // }
+</script>
+</body>
+</html>

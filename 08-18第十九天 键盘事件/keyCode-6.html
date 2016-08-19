@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #box {
+      position: absolute;
+      left: 300px;
+      top: 300px;
+      width: 100px;
+      height: 100px;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+<script>
+  document.onkeydown = function (ev) {
+    var event = ev || window.event;
+
+    // console.log(event.ctrlKey);
+    // console.log(event.shiftKey);
+    // console.log(event.altKey);
+    console.log(event.keyCode);
+  }
+</script>
+</body>
+</html>

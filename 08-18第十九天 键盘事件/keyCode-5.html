@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #box {
+      position: absolute;
+      left: 0;
+      bottom: 0px;
+      width: 100px;
+      height: 100px;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+<script>
+  var oBox = document.getElementById('box');
+  var iLeft = (document.documentElement.clientWidth - oBox.offsetWidth) / 2;
+
+  oBox.style.left = iLeft + 'px';
+
+  document.onkeydown = function (ev) {
+    var event = ev || window.event;
+
+    switch (event.keyCode) {
+      case 37:
+        iLeft -= 10;
+        break;
+      case 39:
+        iLeft += 10;
+        break;
+      case 32:
+        create();
+      default:
+    }
+
+    oBox.style.left = iLeft + 'px';
+  }
+
+  function create() {
+    // 
+  }
+
+  // document.onkeypress = function () {
+  //   console.log(event.keyCode)
+  // }
+</script>
+</body>
+</html>

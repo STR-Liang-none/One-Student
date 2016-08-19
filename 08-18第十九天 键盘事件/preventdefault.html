@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #box {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: none;
+      width: 150px;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+  <a id="link" href="http://baidu.com">baidu.com</a>
+<script>
+  var oLink = document.getElementById('link');
+
+  /*
+    如果是通过 on = function () {}这种形式绑定的，那么
+    通过 return false 就可以阻止掉。
+
+    如果是通过 addEventListener 绑定的，就只能使用
+    event.preventDefault() 来阻止默认事件。
+  */
+
+  oLink.addEventListener('click', function (ev) {
+    var event = ev || window.event;
+
+    console.log(11)
+
+    event.preventDefault();
+    // return false;
+  });
+</script>
+</body>
+</html>

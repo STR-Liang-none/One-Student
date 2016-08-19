@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<input id="ipt" type="text">
+<button id="btn">add</button>
+<ul id="list">
+  <li>dafda<a href="javascript:;">删除</a></li>
+  <li>dafdaf<a href="javascript:;">删除</a></li>
+  <li>dfadfa<a href="javascript:;">删除</a></li>
+</ul>
+<script>
+  var oIpt = document.getElementById('ipt');
+  var oBtn = document.getElementById('btn');
+  var oList = document.getElementById('list');
+
+  var aDel = document.getElementsByTagName('a');
+
+  // for (var i = 0; i < aDel.length; i ++) {
+  //   aDel[i].onclick = function () {
+  //     oList.removeChild(this.parentNode);
+  //   }
+  // }
+
+  // 事件委托：
+  // 事件源：
+  oList.onclick = function (ev) {
+    var event = ev || window.event;
+
+    // console.log(event.srcElement.nodeName);
+
+    // event.srcElement  event.target
+
+    // console.log(event.srcElement, event.target)
+
+    var target = event.target || event.srcElement;
+
+    if (target.nodeName.toLowerCase() === 'a') {
+      oList.removeChild(target.parentNode)
+    }
+  }
+
+  oBtn.onclick = function () {
+    var value = oIpt.value;
+
+    var oLi = document.createElement('li');
+
+    oLi.innerHTML = value + '<a href="javascript:;">删除</a>';
+
+    oIpt.value = '';
+
+    oList.appendChild(oLi);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #box {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: none;
+      width: 150px;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <ul>
+      <li> 第一个功能</li>
+      <li> 第一个功能</li>
+      <li> 第一个功能</li>
+      <li> 第一个功能</li>
+      <li> 第一个功能</li>
+      <li> 第一个功能</li>
+      <li> 第一个功能</li>
+      <li> 第一个功能</li>
+      <li> 第一个功能</li>
+    </ul>
+  </div>
+  <a id="link" href="http://baidu.com">baidu.com</a>
+<script>
+  var oBox = document.getElementById('box');
+
+  document.oncontextmenu = function (ev) {
+    var event = ev || window.event;
+
+    oBox.style.display = 'block';
+    oBox.style.left = event.clientX + 'px';
+    oBox.style.top = event.clientY + 'px';
+
+    return false;
+  }
+
+  document.onclick = function () {
+    oBox.style.display = 'none'
+  }
+</script>
+</body>
+</html>
